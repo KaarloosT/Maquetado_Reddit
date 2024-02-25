@@ -22,6 +22,7 @@
 .grid_container{
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
     gap: 20px;
     padding: 20px;
     align-items: center;
@@ -50,7 +51,7 @@ header > nav{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 60%;
+    width: 40%;
 
 }
 
@@ -64,11 +65,90 @@ header > nav{
     padding-left: 10px;
 }
 
+.filter_items {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%;
+    font-size: 25px;
+    padding-top: 13px;
+    
+}
+
+.filter_items > li {
+    padding: 10px 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 10px;
+    background-color: #2bc5cd;
+}
+
+.filters{
+    background-color: whitesmoke;
+    height: 70px;
+}
+
+.filter_items > li:hover {
+    background-color: #48a0a4;
+    color: white;
+    border: 1px solid var(--blue-color);
+}
+
 .menu_list > li :hover{
     background-color: #4c5ce86e;
     color: white;
 }
 
+footer {
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    height: 50px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+footer > ul:first-child {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    font-size: 25px;
+}
+
+footer > ul:first-child > li {
+    padding-left: 20px;
+}
+
+footer > ul:first-child > li > img {
+    height: 25px;
+    width: 25px;
+}
+
+footer > ul:last-child {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    font-size: 15px;
+    justify-content: space-around;
+}
+
+footer > ul:last-child > li {
+    padding-left: 20px;
+    padding-bottom: 3px;
+}
+
+footer > p {
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
 
 
 a {
@@ -102,20 +182,21 @@ img {
     padding: 10px;
 }
 
-.grid_container > article > div > button {
+.grid_container > article > div > a {
     padding: 10px 20px;
     border: 1px solid black;    
     border-radius: 10px;
+    font-size: 15px;
 }
 
-.grid_container > article > div > button:hover {
+.grid_container > article > div > a:hover {
     background-color: var(--orange-color);
     color: white;
     border: 1px solid var(--blue-color);
 }
 
-.grid_container > article > div > button::before {
-    content: "🛒";
+.grid_container > article > div > a::before {
+    content: "🔍";
 }
 
 .grid_container > article > div > p {
@@ -130,27 +211,14 @@ img {
 }
 
 
-@media (max-width: 1294px) {
-    .grid_container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        padding: 20px;
-        align-items: center;
-        margin: auto;
-        gap:20px;
-    }
-}
 
-@media (max-width: 654px) {
-    .grid_container {
-        
-        grid-template-columns: 1fr;
-        
-    }
-}
 
-@media (max-width: 998px) {
+@media (max-width: 724px) and (min-width: 300px){
+
+    header > nav {
+        display: none;
+    }
+
     .menu {
         display: block;
         width: 50px;
@@ -158,11 +226,27 @@ img {
         margin-right: 20px;
     }
 
-    header > nav {
-        display: none;
+    .grid_container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(10, 1fr);
+        padding: 20px;
+        align-items: center;
+        margin: auto;
+        gap:20px;
     }
-    
-    
+
+    header .shop_name{
+        font-size: 2rem;
+        font-weight: 700;
+        color: black;
+        font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        padding-left: 20px;
+    }
+}
+
+@media (min-width: 725px) and (max-width: 998px) {
     .grid_container {
         
         grid-template-columns: repeat(2, 1fr);
@@ -171,12 +255,23 @@ img {
     }
 }
 
-@media screen and (min-width: 1294px) {
+@media (min-width: 999px) and (max-width: 1293px) {
+    .grid_container {
+        
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        
+    }
+}
+
+@media (min-width: 1294px) {
     .grid_container {
         
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 1fr);
         
     }
-    
 }
+
+
+
