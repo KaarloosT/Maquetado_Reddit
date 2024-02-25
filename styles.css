@@ -1,5 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+
+:root {
+    --primary-color: #3b67d9;
+    --secondary-color: #ccebff;
+    --blue-color: #2bc5cd;
+    --orange-color: #f1641e;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.menu {
+    display: none;
+}
+
+.grid_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    margin: auto;
+}
+
+header{
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .shop_name{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: black;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    padding-left: 20px;
+}
+
+header > nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+
+}
+
+.menu_list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.menu_list > li :hover{
+    background-color: #4c5ce86e;
+    color: white;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+ .grid_container > article {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+}
+
+.grid_container > article > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.grid_container > article > div > button {
+    padding: 10px 20px;
+    border: 1px solid black;    
+    border-radius: 10px;
+}
+
+.grid_container > article > div > button:hover {
+    background-color: var(--orange-color);
+    color: white;
+    border: 1px solid var(--blue-color);
+}
+
+.grid_container > article > div > button::before {
+    content: "🛒";
+}
+
+.grid_container > article > div > p {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.grid_container > article > div > h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+
+@media (max-width: 1294px) {
+    .grid_container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        padding: 20px;
+        align-items: center;
+        margin: auto;
+        gap:20px;
+    }
+}
+
+@media (max-width: 654px) {
+    .grid_container {
+        
+        grid-template-columns: 1fr;
+        
+    }
+}
+
+@media (max-width: 998px) {
+    .menu {
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+    }
+
+    header > nav {
+        display: none;
+    }
+    
+    
+    .grid_container {
+        
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        
+    }
+}
+
+@media screen and (min-width: 1294px) {
+    .grid_container {
+        
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        
+    }
+    
 }
